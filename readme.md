@@ -15,4 +15,5 @@
 
 ## How to
     To run  these files open them in "Visual Studio Code" and run in console :)
-    ![GitHub Logo](./images/testing_scripts.png)
+    ![testing_scripts](./images/testing_scripts.png)
+    Format: ![testing_scripts](./images/testing_scripts.png)
