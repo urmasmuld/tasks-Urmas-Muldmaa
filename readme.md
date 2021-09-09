@@ -15,4 +15,4 @@
 
 ## How to
     To run  these files open them in "Visual Studio Code" and run in console :)
-    ![testing_scripts.png](https://github.com/urmasmuld/tasks-Urmas-Muldmaa/blob/main/images/testing_scripts.png?raw=true)
+    ![testing_scripts](images/testing_scripts.png?raw=true "Testing scripts")
