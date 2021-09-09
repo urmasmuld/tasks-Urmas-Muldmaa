@@ -12,6 +12,6 @@ function colorsX(vars){
 }
     return colors       // return value
 }
-console.log(colorsX(",") + ".")
-console.log(colorsX(",") + ",")
-console.log(colorsX("+") + "+")
+console.log(colorsX(","))
+console.log(colorsX(", "))
+console.log(colorsX(" + "))
