@@ -8,7 +8,6 @@ function getRandomInt(min, max) {
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min) + min) //The maximum is exclusive and the minimum is inclusive
   }
-console.log(getRandomInt(1,100))
 
 function randArray(quantity){
     const arr = []
@@ -19,4 +18,11 @@ function randArray(quantity){
     return(arr)
 }
 
+function getArrayMax(array){
+    return "Array: " + array + " | Max value: " + Math.max.apply(null, array)
+
+}
+
+console.log(getRandomInt(1,100))
 console.log(randArray(5))
+console.log(getArrayMax(randArray(5)))
