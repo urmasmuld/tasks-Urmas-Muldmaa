@@ -4,15 +4,17 @@
 
 const rep = "repeat " // assign String
 function repeatStr(input, times) { // function to repeat given string 'n' times
-    let result = input.repeat(times);  // Repeat 'n' times
+    let result = input.repeat(times)  // Repeat 'n' times
     if (times === undefined) { // Check if variable 'times' is present
-        console.log("Hi!");
+        console.log("Hi!")
+    } else if (times >= 10) { // if repeat value is >=10
+        console.log("Hi! ".repeat(times))
     } else {
-        console.log(result);
+        console.log(result)
     }
 }
 
-repeatStr(rep);
-repeatStr(rep,2);
-repeatStr(rep,3);
-repeatStr(rep,12);
+repeatStr(rep)
+repeatStr(rep,2)
+repeatStr(rep,3)
+repeatStr(rep,12)
