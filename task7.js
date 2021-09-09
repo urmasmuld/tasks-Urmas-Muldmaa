@@ -18,11 +18,12 @@ function randArray(quantity){
     return(arr)
 }
 
-function getArrayMax(array){
-    return "Array: " + array + " | Max value: " + Math.max.apply(null, array)
-
+function getArrayMaxMin(array){
+let arrVal = "" 
+    arrVal += "Array: " + array + " | Max/Min: " + Math.max.apply(null, array) + " / " + Math.min.apply(null, array)
+return arrVal
 }
 
 console.log(getRandomInt(1,100))
 console.log(randArray(5))
-console.log(getArrayMax(randArray(5)))
+console.log(getArrayMaxMin(randArray(5)))
