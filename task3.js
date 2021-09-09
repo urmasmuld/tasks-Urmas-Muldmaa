@@ -5,25 +5,21 @@ const thirdVal = ["Jill", "Jane", "Jim", "Joe"]
 
 // Funktsioon kontrollimaks, kas tegemist on Stringiga, tühja väärtusega või massiiviga
 function greet (name){
+    let result = 'Hello, ' // Et ei peaks iga tingimuse puhul seda teksti lisama, siis määrame teksti alguse ja lõpu ära
     if (Array.isArray(name)){ // Kui tegemist massiiviga
-        return 'Hello, ' + name.toString().split(",").join(" and ")
-//        console.log('Hello, ' + name.toString().split(",").join(" and ")) // Muudame kõigepealt massiivi stringiks (komadega eraldatud), seejärel asendame komad sõnaga " and "
+        result += name.toString().split(",").join(" and ") // Muudame kõigepealt massiivi stringiks (komadega eraldatud), seejärel asendame komad sõnaga " and "
     } else if (!name) {
-        return 'Hello, my friend.'
-//        console.log('Hello, my friend.') // Kui sisendit pole antud
+        result += 'my friend' // Kui sisendit pole antud
     } else {
-        return 'Hello, ' + name + '.'
-//        console.log('Hello, ' + name + '.') // Kui tegemist tavalise stringiga
+        result += name // Kui tegemist tavalise stringiga
     }
-
+    result += '.' // Sama jutt, mis alguses lisamisega - lisame ühe korra punkti, et ei peaks iga "IF" tingimusega lisama
+    return result
 }
-const result = greet(firstVal)
-console.log(result)
-const result1 = greet()
-console.log(result1)
-const result2 = greet(thirdVal)
-console.log(result2)
 
-// tellResult(firstVal)
-// tellResult(secondVal)
-// tellResult(thirdVal)
+const result1 = greet(firstVal)
+console.log(result1)
+const result2 = greet()
+console.log(result2)
+const result3 = greet(thirdVal)
+console.log(result3)
