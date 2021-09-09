@@ -15,4 +15,4 @@
 
 ## How to
     To run  these files open them in "Visual Studio Code" and run in console :)
-    ![testing_scripts](images/testing_scripts.png?raw=true "Testing scripts")
+    ![testing_scripts](images/testing_scripts.png "Testing scripts")
