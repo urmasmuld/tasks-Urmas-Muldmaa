@@ -1,10 +1,16 @@
 const firstval =  ""
 const secondval =  "tere"
 const thirdval =  "minu nimi on John"
+let checkVal
 
-console.log(Boolean(firstval !== ""))
-console.log(Boolean(secondval !== ""))
-console.log(Boolean(thirdval !== ""))
+function testVal(string) {
+    checkVal =  Boolean(string !== "")
+    return checkVal
+}
+
+console.log(testVal(firstval))
+console.log(testVal(secondval))
+console.log(testVal(thirdval))
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
