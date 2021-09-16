@@ -7,7 +7,7 @@ const thirdVal = ["Jill", "Jane", "Jim", "Joe"]
 function greet (name){
     let result = 'Hello, ' // Et ei peaks iga tingimuse puhul seda teksti lisama, siis määrame teksti alguse ja lõpu ära
     if (Array.isArray(name)){ // Kui tegemist massiiviga
-        result += name.toString().split(",").join(" and ") // Muudame kõigepealt massiivi stringiks (komadega eraldatud), seejärel asendame komad sõnaga " and "
+        result += name.join(" and ") // Lisame masiivi väärtused ühte stringi, eraldajaks " and "
     } else if (!name) {
         result += 'my friend' // Kui sisendit pole antud
     } else {
