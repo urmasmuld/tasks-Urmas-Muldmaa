@@ -1,7 +1,7 @@
 const firstName = "Urmas"
 // const birthday = "26.02.1981"
 const birthday = new Date(1981, 02, 26)
-const Hobbies = ['Programmeerimine','Tugitoolisport']
+const hobbies = ['Programmeerimine','Tugitoolisport']
 let birthdayDay
 let birthdayMonth
 if (birthday.getDate() < 10) {
@@ -20,7 +20,7 @@ const formattedBirthDay = birthdayDay + '.' + birthdayMonth + '.' + birthday.get
 const aboutMe = {
     firstName,
     formattedBirthDay,
-    Hobbies
+    hobbies
 }
 
 // let Day = birthday.split(".")[0]
