@@ -2,7 +2,7 @@
 // https://github.com/urmasmuld
 // 09.09.2021
 
-const rep = "repeat " // assign String
+const rep = "Hi! " // assign String
 function repeatStr(input, times) { // function to repeat given string 'n' times
     let result = input.repeat(times)  // Repeat 'n' times
     if (times === undefined) { // Check if variable 'times' is present
