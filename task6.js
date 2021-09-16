@@ -5,7 +5,7 @@
 const rep = "Hello! " // assign String
 function repeatStr(input, times) { // function to repeat given string 'n' times
     let result = input.repeat(times)  // Repeat 'n' times
-    if (times === undefined) { // Check if variable 'times' is present
+    if (!times) { // Check if variable 'times' is not in present
         console.log("Hi!")
     } else if (times >= 10) { // if repeat value is >=10
         console.log("Hi! ".repeat(times))
