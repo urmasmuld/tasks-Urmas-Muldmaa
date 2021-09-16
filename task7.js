@@ -13,9 +13,9 @@ function getRandomInt(min, max) { // function to retrieve random number between 
 
 function randArray(quantity){ // function to retrieve 'n' random numbers
     const arr = [] // declare array
-    while(arr.length < quantity){ // generate array
+    for (var i = 0; i < quantity; i++) {
         var candidateInt = getRandomInt(min,max) // get random number between 1-100
-        if(arr.indexOf(candidateInt) === -1) arr.push(candidateInt) // add random number to array
+        arr.push(candidateInt) // add random number to array
     }
     return(arr)
 }
