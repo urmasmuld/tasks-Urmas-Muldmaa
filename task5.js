@@ -4,8 +4,7 @@ const thirdval =  "minu nimi on John"
 let checkVal
 
 function testVal(string) {
-    checkVal =  Boolean(string !== "")
-    return checkVal
+    return !!string
 }
 
 console.log(testVal(firstval))
