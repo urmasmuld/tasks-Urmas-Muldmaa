@@ -145,9 +145,9 @@ for (i = 0; i < movieLeo.length; i++) {
 
 // Exercise 5.2.2 - Genre: do they have matching genre(s), if yes log out "Matching genre(s): genre", if not log out "There are no matching genres"
 function getOccurrence(array, value) {
-    var count = 0;
-    array.forEach((v) => (v === value && count++));
-    return count;
+    var count = 0
+    array.forEach((v) => (v === value && count++))
+    return count
 }
 let arrDuplicates = []
 for (i = 0; i < arr.length; i++) {
