@@ -117,9 +117,26 @@ const ratingHigherThan = movieData.filter((p) => {
       return p
   }
 })
-console.log('Rating Over 9.0', ratingHigherThan)
+// console.log('Rating Over 9.0', ratingHigherThan)
 
 // Exercise 4.2 - Log out "There are count movies that have been rated more than 9.0. These movies are: list of movie titles"
 let ratingHigherThanTitles = getFields(ratingHigherThan, "Title")
-console.log("There are " + ratingHigherThan.length + " movies that have been rated more than 9.0. These movies are: " + "\x1b[33m%s\x1b[0m", ratingHigherThanTitles.join())
+// console.log("There are " + ratingHigherThan.length + " movies that have been rated more than 9.0. These movies are: " + "\x1b[33m%s\x1b[0m", ratingHigherThanTitles.join())
 
+//// Exercise 5
+// Exercise 5.1 - Find all movies, where Leonardo DiCaprio has played
+const movieLeo = movieData.filter((p) => {
+  if (p.Actors.includes('Leonardo DiCaprio')) {
+      return p
+  }
+})
+
+// Exercise 5.2 - Log out each Leonardo DiCaprio movie data like that:
+                                                                    // Movie title:
+                                                                    // Director
+                                                                    // Plot:
+console.log("Leonardo played in these movies:")
+let arr = []
+for (i = 0; i < movieLeo.length; i++) {
+  console.log("Movie title: " + "\x1b[33m%s\x1b[0m", "\"" + movieLeo[i].Title + "\"\n" + "\x1b[0mDirector: " + movieLeo[i].Director + "\n" + "Plot: " + movieLeo[i].Plot + "\n")
+}
