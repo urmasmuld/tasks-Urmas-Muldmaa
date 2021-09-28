@@ -1,8 +1,7 @@
-const movieData = require('./moviedata.json')
-
-// Exercise 1
+const movieData = require('./moviedata_test.json')
+//// Exercise 1
 // Lets correct some JSON data - convert string to number, string to decimal, dates etc...
-  // A bit dirty month fix :)
+  // A bit dirty fix for month number :)
   function getMonth(monthStr){
     return new Date(monthStr+'-1-01').getMonth()
   }
@@ -13,6 +12,7 @@ movieData.forEach(function(elem){
   let movDate = new Date(arrReleased[2], getMonth(arrReleased[1]), arrReleased[0])
 
   elem.Released = movDate.toLocaleString("et-EE", options)
+  elem.Runtime = elem.Runtime.replace(" min", "").replace(" h ",":")
   elem.Genre = elem.Genre.split(", ")
   elem.Director = elem.Director.split(", ")
   elem.Writer = elem.Writer.split(", ")
@@ -29,7 +29,6 @@ movieData.sort(function(a,b) {
     return 1
   return 0
 })
-
   // console.log(movieData)
 
   // Exercise 1.1 - Find and log out all movies that are released between 1962 and 1972
@@ -46,16 +45,39 @@ let betweenYears = function(min,max){
 }
 betweenYears(startYear,endYear)
 // console.log("Movies between 1962-1972: ")
-console.log(ex1Data)
+// console.log(ex1Data)
 // Exercise 1.2 - From those find movie, that has best imdb rating and movie that has been rated most // imdbRating
 let maxRating = ex1Data.reduce((max, movie) => max.imdbRating > movie.imdbRating ? max : movie)
 // console.log('\x1b[36m%s\x1b[0m',"Max rated movie between 1962-1972: ")
 // console.log(maxRating.Title)
 
 // Exercise 1.3 - Log out "Best rated movie is movie name, directed by movie director and was released in release date - day, month, year."
-// console.log('\x1b[33m%s\x1b[0m', "Movie name: \"" + maxRating.Title + "\"\n" + "Directed by: \"" + maxRating.Director + "\"\n" + "Released: \"" + maxRating.Released + "\"")
+// console.log('\x1b[33m%s\x1b[0m', "Best rated movie is \"" + maxRating.Title + "\", directed by " + maxRating.Director + " and was released in " + maxRating.Released)
 
 // Exercise 1.4 - Log out "Most rated movie is movie name, directed by movie director and was released in release date - day, month, year."
 let mostRated = ex1Data.reduce((max, movie) => max.imdbVotes > movie.imdbVotes ? max : movie)
-// console.log(mostRated)
-console.log('\x1b[33m%s\x1b[0m', "Movie name: \"" + mostRated.Title + "\"\n" + "Directed by: \"" + mostRated.Director + "\"\n" + "Released: \"" + mostRated.Released + "\"")
+// console.log('\x1b[36m%s\x1b[0m',"Most rated movie between 1962-1972: ")
+// console.log('\x1b[33m%s\x1b[0m', "Most rated movie is \"" + mostRated.Title + "\", directed by " + mostRated.Director + " and was released in " + mostRated.Released)
+
+//// Exercise 2
+// Exercise 2.1 - Find all movies, where genre includes Drama
+const movieDrama = movieData.filter((p) => {
+  if (p.Genre.includes('Drama')) {
+      return p
+  }
+})
+
+// console.log('Drama', movieDrama)
+// Exercise 2.2 - From those find movie, that has best imdb rating and movie that has been rated most
+let maxRatedDrama = movieDrama.reduce((max, movie) => max.imdbRating > movie.imdbRating ? max : movie)
+// console.log(maxDramaRating)
+
+// Exercise 2.3 - Log out "Best rated drama is movie name, directed by movie director and was released in release date - day, month, year."
+// console.log('\x1b[36m%s\x1b[0m',"Max rated Drama movie: ")
+// console.log('\x1b[33m%s\x1b[0m', "Best rated drama is \"" + maxRatedDrama.Title + "\", directed by " + maxRatedDrama.Director + " and was released in " + maxRatedDrama.Released)
+
+// Exercise 2.4 - Log out "Most rated drama is movie name, directed by movie director and was released in release date - day, month, year."
+let mostRatedDrama = movieDrama.reduce((max, movie) => max.imdbVotes > movie.imdbVotes ? max : movie)
+// console.log(mostRatedDrama)
+console.log('\x1b[36m%s\x1b[0m',"Most rated movie between 1962-1972: ")
+console.log('\x1b[33m%s\x1b[0m', "Most rated drama is \"" + mostRatedDrama.Title + "\", directed by " + mostRatedDrama.Director + " and was released in " + mostRatedDrama.Released)
