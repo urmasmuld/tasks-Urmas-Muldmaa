@@ -151,8 +151,8 @@ function getOccurrence(array, value) {
 }
 let arrDuplicates = []
 for (i = 0; i < arr.length; i++) {
-  // if (getOccurrence(arr, arr[i]) >= movieLeo.length) {
-    if (getOccurrence(arr, arr[i]) >= 2) {
+  if (getOccurrence(arr, arr[i]) >= movieLeo.length) {
+    // if (getOccurrence(arr, arr[i]) >= 2) {
       arrDuplicates = arrDuplicates.concat(arr[i])
   //     // console.log("Matching genre(s): " + arr[i])
   // } else {
@@ -164,3 +164,4 @@ if(arrDuplicates.length >0) {
 } else {
   console.log("\x1b[35m", "There are no matching genres", "\x1b[0m")
 }
+
