@@ -131,7 +131,7 @@ const movieLeo = movieData.filter((p) => {
   }
 })
 
-// Exercise 5.2 - Log out each Leonardo DiCaprio movie data like that:
+// Exercise 5.2.1 - Log out each Leonardo DiCaprio movie data like that:
                                                                     // Movie title:
                                                                     // Director
                                                                     // Plot:
@@ -143,7 +143,7 @@ for (i = 0; i < movieLeo.length; i++) {
 }
 // console.log(arr)
 
-// Exercise 5.2 - Genre: do they have matching genre(s), if yes log out "Matching genre(s): genre", if not log out "There are no matching genres"
+// Exercise 5.2.2 - Genre: do they have matching genre(s), if yes log out "Matching genre(s): genre", if not log out "There are no matching genres"
 function getOccurrence(array, value) {
     var count = 0;
     array.forEach((v) => (v === value && count++));
@@ -152,7 +152,7 @@ function getOccurrence(array, value) {
 let arrDuplicates = []
 for (i = 0; i < arr.length; i++) {
   if (getOccurrence(arr, arr[i]) >= movieLeo.length) {
-    // if (getOccurrence(arr, arr[i]) >= 2) {
+    // if (getOccurrence(arr, arr[i]) >= 2) { // for testing purposes
       arrDuplicates = arrDuplicates.concat(arr[i])
   //     // console.log("Matching genre(s): " + arr[i])
   // } else {
@@ -160,8 +160,22 @@ for (i = 0; i < arr.length; i++) {
   }
 }
 if(arrDuplicates.length >0) {
-  console.log("Matching genre(s): " + "\x1b[33m%s\x1b[0m", arrDuplicates.join(", "))
+  // console.log("Matching genre(s): " + "\x1b[33m%s\x1b[0m", arrDuplicates.join(", "))
 } else {
-  console.log("\x1b[35m", "There are no matching genres", "\x1b[0m")
+  // console.log("\x1b[35m", "There are no matching genres", "\x1b[0m")
 }
 
+// Exercise 5.3.3 - Released: log out "First Leonardo DiCaprio movie in this list was released on year, last one was released on year and they have calculated years apart"
+
+// const minLeo = getFields(movieLeo, "Year")
+
+function getArrayMaxMin(array){ // function to retrieve array's min/max values and how many even numbers are in array
+  let arrVal = "" // declare array
+  let min = Math.min.apply(null, array) // declare min number in array
+  let max = Math.max.apply(null, array) // declare max number in array
+      // arrVal += "Array: " + array + " |>| Max/Min: " + max + " / " + min
+      arrVal += "First Leonardo DiCaprio movie in this list was released on \"" + min + "\", last one was released on \"" + max + "\" and they have \"" + (max-min) + "\" years apart"
+      return arrVal
+  }
+
+  console.log(getArrayMaxMin(getFields(movieLeo, "Year")))
