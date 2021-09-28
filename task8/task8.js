@@ -171,8 +171,6 @@ function getArrayMaxMin(array, field){ // function to retrieve array's min/max v
   let arrVal = "" // declare array
   let min = Math.min.apply(null, array) // declare min number in array
   let max = Math.max.apply(null, array) // declare max number in array
-      // arrVal += "Array: " + array + " |>| Max/Min: " + max + " / " + min
-      // return field
       if (field == "year") {
         arrVal += "First Leonardo DiCaprio movie in this list was released on \"" + min + "\", last one was released on \"" + max + "\" and they have \"" + (max-min) + "\" years apart"
         } else if (field == "rating") {
