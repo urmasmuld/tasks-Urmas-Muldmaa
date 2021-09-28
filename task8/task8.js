@@ -165,17 +165,23 @@ if(arrDuplicates.length >0) {
   // console.log("\x1b[35m", "There are no matching genres", "\x1b[0m")
 }
 
-// Exercise 5.3.3 - Released: log out "First Leonardo DiCaprio movie in this list was released on year, last one was released on year and they have calculated years apart"
-
-// const minLeo = getFields(movieLeo, "Year")
-
-function getArrayMaxMin(array){ // function to retrieve array's min/max values and how many even numbers are in array
+// Exercise 5.2.3 - Released: log out "First Leonardo DiCaprio movie in this list was released on year, last one was released on year and they have calculated years apart"
+// Exercise 5.2.4 - Rating: log out "Best rating for Leonardo DiCaprio movie in this list is largest rating and worse is smallest rating"
+function getArrayMaxMin(array, field){ // function to retrieve array's min/max values and how many even numbers are in array
   let arrVal = "" // declare array
   let min = Math.min.apply(null, array) // declare min number in array
   let max = Math.max.apply(null, array) // declare max number in array
       // arrVal += "Array: " + array + " |>| Max/Min: " + max + " / " + min
-      arrVal += "First Leonardo DiCaprio movie in this list was released on \"" + min + "\", last one was released on \"" + max + "\" and they have \"" + (max-min) + "\" years apart"
-      return arrVal
+      // return field
+      if (field == "year") {
+        arrVal += "First Leonardo DiCaprio movie in this list was released on \"" + min + "\", last one was released on \"" + max + "\" and they have \"" + (max-min) + "\" years apart"
+        } else if (field == "rating") {
+        arrVal += "Best rating for Leonardo DiCaprio movie in this list is \"" + max + "\" rating and worse is \"" + min + "\" rating"
+        }
+        return arrVal
   }
 
-  console.log(getArrayMaxMin(getFields(movieLeo, "Year")))
+  console.log(getArrayMaxMin(getFields(movieLeo, "Year"), "year"))
+  console.log(getArrayMaxMin(getFields(movieLeo, "imdbRating"), "rating"))
+
+  
