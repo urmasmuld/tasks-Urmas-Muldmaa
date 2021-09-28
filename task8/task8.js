@@ -1,4 +1,4 @@
-const movieData = require('./moviedata_test.json')
+const movieData = require('./moviedata.json')
 //// Exercise 1
 // Lets correct some JSON data - convert string to number, string to decimal, dates etc...
   // A bit dirty fix for month number :)
@@ -93,20 +93,33 @@ const movieRated = movieData.filter((p) => {
 
 // Exercise 3.2 - Log out "Movies that are rated R are: movie names separated by comma."
 function getFields(input, field) {
-  var output = []
-  for (var i=0; i < input.length ; ++i)
+  let output = []
+  for (let i=0; i < input.length ; ++i)
       output.push(input[i][field])
   return output
 }
-var movieRatedTitles = getFields(movieRated, "Title")
-console.log("Movies that are rated R are: " + "\x1b[33m%s\x1b[0m", movieRatedTitles.join())
+let movieRatedTitles = getFields(movieRated, "Title")
+// console.log("Movies that are rated R are: " + "\x1b[33m%s\x1b[0m", movieRatedTitles.join())
 
 // Exercise 3.3 - Make list of all actors, that have made rated R movie. Do not repeat one actor multiple times!
-var movieRatedActors = getFields(movieRated, "Actors")
+let movieRatedActors = getFields(movieRated, "Actors")
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index
 }
-var uniqueActors = movieRatedActors.filter(onlyUnique)
+let uniqueActors = movieRatedActors.filter(onlyUnique)
 // Exercise 3.4 - Log out "Actors that played in those movies: names separated by comma"
-console.log("Actors that played in those movies: " + "\x1b[33m%s\x1b[0m", uniqueActors.join())
+// console.log("Actors that played in those movies: " + "\x1b[33m%s\x1b[0m", uniqueActors.join())
+
+//// Exercise 4
+// Exercise 4.1 - Find all movies that have imdb rating higher than 9.0
+const ratingHigherThan = movieData.filter((p) => {
+  if (p.imdbRating > 9) {
+      return p
+  }
+})
+console.log('Rating Over 9.0', ratingHigherThan)
+
+// Exercise 4.2 - Log out "There are count movies that have been rated more than 9.0. These movies are: list of movie titles"
+let ratingHigherThanTitles = getFields(ratingHigherThan, "Title")
+console.log("There are " + ratingHigherThan.length + " movies that have been rated more than 9.0. These movies are: " + "\x1b[33m%s\x1b[0m", ratingHigherThanTitles.join())
 
