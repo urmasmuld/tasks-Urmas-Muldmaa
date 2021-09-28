@@ -135,8 +135,32 @@ const movieLeo = movieData.filter((p) => {
                                                                     // Movie title:
                                                                     // Director
                                                                     // Plot:
-console.log("Leonardo played in these movies:")
+// console.log("Leonardo played in these movies:")
 let arr = []
 for (i = 0; i < movieLeo.length; i++) {
-  console.log("Movie title: " + "\x1b[33m%s\x1b[0m", "\"" + movieLeo[i].Title + "\"\n" + "\x1b[0mDirector: " + movieLeo[i].Director + "\n" + "Plot: " + movieLeo[i].Plot + "\n")
+  // console.log("Movie title: " + "\x1b[33m%s\x1b[0m", "\"" + movieLeo[i].Title + "\"\n" + "\x1b[0mDirector: " + movieLeo[i].Director + "\n" + "Plot: " + movieLeo[i].Plot + "\n")
+  arr = arr.concat(movieLeo[i].Genre) // Exercise 5.2 - Genre: do they have matching genre(s), if yes log out "Matching genre(s): genre", if not log out "There are no matching genres"
+}
+// console.log(arr)
+
+// Exercise 5.2 - Genre: do they have matching genre(s), if yes log out "Matching genre(s): genre", if not log out "There are no matching genres"
+function getOccurrence(array, value) {
+    var count = 0;
+    array.forEach((v) => (v === value && count++));
+    return count;
+}
+let arrDuplicates = []
+for (i = 0; i < arr.length; i++) {
+  // if (getOccurrence(arr, arr[i]) >= movieLeo.length) {
+    if (getOccurrence(arr, arr[i]) >= 2) {
+      arrDuplicates = arrDuplicates.concat(arr[i])
+  //     // console.log("Matching genre(s): " + arr[i])
+  // } else {
+  //   // console.log("There are no matching genres")
+  }
+}
+if(arrDuplicates.length >0) {
+  console.log("Matching genre(s): " + "\x1b[33m%s\x1b[0m", arrDuplicates.join(", "))
+} else {
+  console.log("\x1b[35m", "There are no matching genres", "\x1b[0m")
 }
