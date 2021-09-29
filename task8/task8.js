@@ -176,7 +176,7 @@ function getArrayMaxMin(array, field){ // function to retrieve array's min/max v
       if (field == "year") {
         arrVal += "First Leonardo DiCaprio movie in this list was released on \"" + min + "\", last one was released on \"" + max + "\" and they have \"" + (max-min) + "\" years apart"
         } else if (field == "rating") {
-        arrVal += "Best rating for Leonardo DiCaprio movie in this list is \"" + max + "\" rating and worse is \"" + min + "\" rating"
+        arrVal += "Best rating for Leonardo DiCaprio movie in this list is \"" + max + "\" and worse is \"" + min
         }
         return arrVal
   }
