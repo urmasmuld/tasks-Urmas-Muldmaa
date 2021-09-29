@@ -110,7 +110,7 @@ function onlyUnique(value, index, self) {
 let uniqueActors = movieRatedActors.flat(1).filter(onlyUnique) // fixed array to 1 dimension to get unique values
 
 // Exercise 3.4 - Log out "Actors that played in those movies: names separated by comma"
-console.log("Actors that played in those movies: " + "\x1b[33m%s\x1b[0m", uniqueActors.join())
+// console.log("Actors that played in those movies: " + "\x1b[33m%s\x1b[0m", uniqueActors.join())
 
 //// Exercise 4
 // Exercise 4.1 - Find all movies that have imdb rating higher than 9.0
@@ -181,7 +181,7 @@ function getArrayMaxMin(array, field){ // function to retrieve array's min/max v
         return arrVal
   }
 
-  // console.log(getArrayMaxMin(getFields(movieLeo, "Year"), "year"))
-  // console.log(getArrayMaxMin(getFields(movieLeo, "imdbRating"), "rating"))
+  console.log(getArrayMaxMin(getFields(movieLeo, "Year"), "year"))
+  console.log(getArrayMaxMin(getFields(movieLeo, "imdbRating"), "rating"))
 
   
