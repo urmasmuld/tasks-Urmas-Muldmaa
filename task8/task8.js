@@ -85,7 +85,8 @@ let mostRatedDrama = movieDrama.reduce((max, movie) => max.imdbVotes > movie.imd
 //// Exercise 3
 // Exercise 3.1 - Find all movies, that are rated R
 const movieRated = movieData.filter((p) => {
-  if (p.Rated.includes('R')) {
+  // if (p.Rated.includes('R')) {
+    if (p.Rated == "R") { // fixed condition
       return p
   }
 })
